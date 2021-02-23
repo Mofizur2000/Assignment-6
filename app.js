@@ -7,10 +7,11 @@ const sliderContainer = document.getElementById('sliders');
 // selected image 
 let sliders = [];
 
+
 // If this key doesn't work
 // Find the name in the url and go to their website
 // to create your own api key
-const KEY = '20271242-a5c2ccfa81039b041739abc99';
+const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 
 // show images 
 const showImages = (images) => {
@@ -38,6 +39,7 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.add('added');
+ 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
@@ -66,7 +68,6 @@ const createSlider = () => {
   // hide image aria
   imagesArea.style.display = 'none';
   const duration = document.getElementById('duration').value || 1000;
-
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -81,8 +82,6 @@ const createSlider = () => {
     changeSlide(slideIndex);
   }, duration);
 }
-  
- 
 
 // change slider index 
 const changeItem = index => {
